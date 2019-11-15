@@ -5,7 +5,6 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -21,6 +20,10 @@ import org.junit.Test;
 import com.training.collection.model.Student;
 import com.training.collection.util.TestClassHelper;
 
+/**
+ * @author sats17
+ *
+ */
 public class StudentTest {
 
 
@@ -29,7 +32,7 @@ public class StudentTest {
 	
 	
 	/**
-	 * 
+	 * Sets all objects.
 	 */
 	@Before
 	public void setUp() {
@@ -42,7 +45,7 @@ public class StudentTest {
 	}
 
 	/**
-	 * 
+	 * Checks that two object are equal or not.
 	 */
 	@Test
 	public void testTwoObjectEquals() {
@@ -72,18 +75,24 @@ public class StudentTest {
 		assertEquals(3, data.size());
 	}
 	
+	/**
+	 * Test method for insertion order in list.
+	 */
 	@Test
 	public void testInsertionOrderOfObjectInList() {
 		assertTrue(TestClassHelper.checkList(Student1, Student3, Student4, Student5));
 	}
 	
+	/**
+	 * Test method for insertion order in set.
+	 */
 	@Test
 	public void testInsertionOrderOfObjectInSet() {
 		assertFalse(TestClassHelper.checkSet(Student1,Student3,Student4,Student5));
 	}
 	
 	@Test
-	public void testInsertionOrderForTreeSet() {
+	public void testSortingrderForTreeSet() {
 		Set<Student> tree= new TreeSet<Student>();
 		tree.add(Student1);
 		tree.add(Student2);
@@ -101,6 +110,9 @@ public class StudentTest {
 		}
 	}
 	
+	/**
+	 * Test method for checking overriding object
+	 */
 	@Test
 	public void testDuplicateElementKeyValueAddedInHashMapOrNot() {
 		Map<String,String> map = new HashMap<String,String>();

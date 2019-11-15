@@ -47,6 +47,8 @@ public class CarTest {
 		assertTrue(car1.equals(car2));
 	}
 	
+	
+	
 	/**
 	 * Test method for check hashcode of two objects are equal
 	 * or not according to their calculation.
