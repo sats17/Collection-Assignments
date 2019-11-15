@@ -1,12 +1,20 @@
 package com.training.collection.model;
 
 public class CellPhone {
-	
+
 	private String company;
 	private String model;
 	private String description;
 	private String operatingSystem;
 	private double price;
+
+	/**
+	 * @param company
+	 * @param model
+	 * @param description
+	 * @param operatingSystem
+	 * @param price
+	 */
 	public CellPhone(String company, String model, String description, String operatingSystem, double price) {
 		super();
 		this.company = company;
@@ -15,6 +23,10 @@ public class CellPhone {
 		this.operatingSystem = operatingSystem;
 		this.price = price;
 	}
+
+	/**
+	 *@return result
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -24,6 +36,10 @@ public class CellPhone {
 		result = prime * result + ((operatingSystem == null) ? 0 : operatingSystem.hashCode());
 		return result;
 	}
+
+	/**
+	 *@return boolean
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -50,9 +66,5 @@ public class CellPhone {
 			return false;
 		return true;
 	}
-	
-	
-	
-	
-	
+
 }

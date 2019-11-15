@@ -3,14 +3,13 @@ package com.training.collection.model;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Car {
-	
+public class Car implements Comparable<Car> {
+
 	private String make;
 	private String model;
 	private int year;
 	private double price;
-	
-	
+
 	/**
 	 * @param make
 	 * @param model
@@ -24,20 +23,75 @@ public class Car {
 		this.year = year;
 		this.price = price;
 	}
+
+	/**
+	 * @return the make
+	 */
+	public String getMake() {
+		return make;
+	}
+
+	/**
+	 * @param make the make to set
+	 */
+	public void setMake(String make) {
+		this.make = make;
+	}
+
+	/**
+	 * @return the model
+	 */
+	public String getModel() {
+		return model;
+	}
+
+	/**
+	 * @param model the model to set
+	 */
+	public void setModel(String model) {
+		this.model = model;
+	}
+
+	/**
+	 * @return the year
+	 */
+	public int getYear() {
+		return year;
+	}
+
+	/**
+	 * @param year the year to set
+	 */
+	public void setYear(int year) {
+		this.year = year;
+	}
+
+	/**
+	 * @return the price
+	 */
+	public double getPrice() {
+		return price;
+	}
+
+	/**
+	 * @param price the price to set
+	 */
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+	/**
+	 *	@return result
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((make == null) ? 0 : make.hashCode());
 		result = prime * result + ((model == null) ? 0 : model.hashCode());
-//		long temp;
-//		temp = Double.doubleToLongBits(price);
-//		result = prime * result + (int) (temp ^ (temp >>> 32));
-//		result = prime * result + year;
 		return result;
 	}
-	
-	
+
 	/**
 	 * @param obj
 	 * @return boolean
@@ -61,37 +115,22 @@ public class Car {
 				return false;
 		} else if (!model.equals(other.model))
 			return false;
-		
+
 		return true;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "Car [make=" + make + ", model=" + model + ", year=" + year + ", price=" + price + "]";
 	}
-	public static void main(String[] args) {
-		Car c = new Car("toyota", "4L3", 1929, 55500);
-		Car d = new Car("toyota", "4L3", 1999, 40000);
-		
-		Set<Car> data = new HashSet<Car>();
-		data.add(c);
-		data.add(d);
-		System.out.println(data.size());
-//		if(c == d) {
-//			System.out.println("True");
-//			System.out.println(c);
-//			System.out.println(c.hashCode());
-//			System.out.println(d);
-//			System.out.println(d.hashCode());
-//		}
-//		else {
-//			System.out.println(c);
-//			System.out.println(c.hashCode());
-//			System.out.println(d);
-//			System.out.println(d.hashCode());
-//		}
+
+	/**
+	 * @return boolean
+	 * It sort according to make.
+	 */
+	@Override
+	public int compareTo(Car o) {
+		return this.make.compareTo(o.make);
 	}
-	
-	
-	
+
 }

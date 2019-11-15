@@ -11,6 +11,14 @@ import com.training.collection.model.CellPhone;
 
 public class TestClassHelper {
 
+	/**
+	 * @param obj1
+	 * @param obj2
+	 * @param obj3
+	 * @param obj4
+	 * @return boolean
+	 * It return true if arrays are equal, else false.
+	 */
 	public static boolean checkSet(Object obj1,Object obj2,Object obj3,Object obj4) {
 		Set<Object> data = new HashSet<Object>();
 		data.add(obj1);
@@ -19,16 +27,24 @@ public class TestClassHelper {
 		data.add(obj4);
 		
 		Object[] arr = new Object[] {obj1,obj2,obj3,obj4};
-		CellPhone[] result = new CellPhone[4];
+		Object[] result = new Object[4];
 		Iterator it = data.iterator();
 		int i = 0;
 		while(it.hasNext()) {
-			result[i] = (CellPhone) it.next();
+			result[i] = (Object) it.next();
 			i++;
 		}
 		return Arrays.equals(arr, result);
 	}
 	
+	/**
+	 * @param obj1
+	 * @param obj2
+	 * @param obj3
+	 * @param obj4
+	 * @return boolean
+	 * It return true if arrays are equal, else false.
+	 */
 	public static boolean checkList(Object obj1,Object obj2,Object obj3,Object obj4) {
 		List<Object> data = new ArrayList<Object>();
 		data.add(obj1);
@@ -37,14 +53,16 @@ public class TestClassHelper {
 		data.add(obj4);
 		
 		Object[] arr = new Object[] {obj1,obj2,obj3,obj4};
-		CellPhone[] result = new CellPhone[4];
+		Object[] result = new Object[4];
 		Iterator it = data.iterator();
 		int i = 0;
 		while(it.hasNext()) {
-			result[i] = (CellPhone) it.next();
+			result[i] = (Object) it.next();
 			i++;
 		}
 		return Arrays.equals(arr, result);
 	}
+	
+	
 	
 }	

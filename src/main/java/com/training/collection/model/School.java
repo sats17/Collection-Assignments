@@ -1,11 +1,22 @@
 package com.training.collection.model;
 
+/**
+ * @author sats17
+ *
+ */
 public class School {
 
 	private String name;
 	private String city;
 	private String district;
 	private int schoolRanking;
+
+	/**
+	 * @param name
+	 * @param city
+	 * @param district
+	 * @param schoolRanking
+	 */
 	public School(String name, String city, String district, int schoolRanking) {
 		super();
 		this.name = name;
@@ -13,6 +24,10 @@ public class School {
 		this.district = district;
 		this.schoolRanking = schoolRanking;
 	}
+
+	/**
+	 *@return boolean
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -22,6 +37,10 @@ public class School {
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
 	}
+
+	/**
+	 *@return boolean
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -48,7 +67,5 @@ public class School {
 			return false;
 		return true;
 	}
-	
-	
-	
+
 }

@@ -14,7 +14,6 @@ public class Laptop {
 		this.model = model;
 		this.operatingType = operatingType;
 		this.processor = processor;
-		System.out.println(company.hashCode());
 	}
 
 
